@@ -1,3 +1,4 @@
+
 from index import InvertedIndex, tokenization , tokenize , bm25_idf_command ,BM25_K1 ,bm25_tf_command , BM25_B
 import argparse
 import json
@@ -129,6 +130,10 @@ def main() -> None:
                 title = movie['title']
                 print(f'{n}. ({result[0]}) {title} - Score: {result[1]:.2f}')
                 n += 1
+
+        case "verify":
+            print(verify_model())
+
         case _:
             parser.print_help()
 
